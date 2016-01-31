@@ -11,8 +11,8 @@ url = "http://stats.nba.com/stats/teamgamelog?LeagueID=00&Season=2014-15&SeasonT
 data = fromJSON(file=url)
 #Convert JSON into R data frame.
 
-gameIDVector = vector("list", length(json_data$resultSets[[1]]$rowSet))
-gameNameVector = vector("list", length(json_data$resultSets[[1]]$rowSet))
+gameIDVector = vector("list", length(data$resultSets[[1]]$rowSet))
+gameNameVector = vector("list", length(data$resultSets[[1]]$rowSet))
 for(i in 1:length(data$resultSets[[1]]$rowSet))
 {
 	gameIDVector[[i]] = data$resultSets[[1]]$rowSet[[i]][[2]]
